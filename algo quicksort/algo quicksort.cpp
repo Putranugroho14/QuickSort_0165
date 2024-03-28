@@ -37,9 +37,12 @@ void swap(int x, int y)
 	arr[x] = arr[y];
 	arr[y] = temp;
 	mov_count++;
+
+
 }
 void q_short(int low, int high)
 {
+
 	int temp;
 	int pivot, i, j;
 	if (low > high) { //step 1
@@ -57,20 +60,21 @@ void q_short(int low, int high)
 			i++; //step 6
 			cmp_count++;
 		}
-	}
-	cmp_count++;
-	//search for an element less than or equal to pivot
-	while ((arr[j] > pivot) && (j >= low)) //step 7
-	{
-		j--; //step 8
 		cmp_count++;
+		//search for an element less than or equal to pivot
+		while ((arr[j] > pivot) && (j >= low)) //step 7
+		{
+			j--; //step 8
+			cmp_count++;
+		}
+		cmp_count++;
+		if (i < j) // step 9
+		{
+			//swap the element at index i whit the element at index j
+			swap(i, j);
+		}
 	}
-	cmp_count++;
-	if (i < j) // step 9
-	{
-		//swap the element at index i whit the element at index j
-		swap(i, j);
-	}
+
 	if (low < j) { //step 11
 		//swap the pivot element with the element at index j
 		swap(low, j);
@@ -79,9 +83,11 @@ void q_short(int low, int high)
 	q_short(low, j - 1); //step 12
 
 	//recursive call to sort the right sub array
-    
+
 	q_short(j + 1, high); //step 13
-}    
+
+
+}
 
 void display() {                                               
 	cout << "\n--------------------" << endl; 
