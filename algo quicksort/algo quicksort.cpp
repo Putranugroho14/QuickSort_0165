@@ -33,6 +33,13 @@ void input() {
 	}
 }
 
+//swaps the element at index x with the element at index y
+void swap(int x, int y)
+{
+	
+	
+
+}
 int main()
 {
    
