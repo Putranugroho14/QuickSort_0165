@@ -91,7 +91,12 @@ void display() {
 	cout << "Soerted Array" << endl; 
 	cout << "-------------------" << endl;
 
-	
+	for (int i = 0; i < n; i++)
+	{                        
+		cout << arr[i] << " ";
+	}
+	cout << "\n\nNumber of comparasions : " << cmp_count << endl;
+	cout << "Number of data moevements: " << mov_count << endl;
 }
 
 int main()
